@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/jolyonfaria/wordsearchgame.svg?branch=master)](https://travis-ci.com/jolyonfaria/wordsearchgame)
+[![Build Status](https://travis-ci.com/jolyonfaria/wordsearchgame.svg?token=LHfWxcGYuGqTtAx1F1pw&branch=master)](https://travis-ci.com/jolyonfaria/wordsearchgame)
 <br />
 
 # wordsearchgame
