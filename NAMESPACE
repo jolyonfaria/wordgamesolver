@@ -2,7 +2,6 @@
 
 export(get_next_chars)
 export(get_path)
-export(hello)
 export(make_mers_tree)
 export(restrict_using_first_2_letters)
 export(subset_known_words)
