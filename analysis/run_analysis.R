@@ -1,47 +1,15 @@
 # Solve Wordtrek
 
-# A program to solve Wordtrek puzzles. The inputs are word lengths and the wordtrek letters and the output are a
-# a set of possible words.
+# A program to provide hints for a word search game. The user must provide three inputs:
+# (1) Letter matrix
+# (2) Word lengths
+# (3) Word starting letters (if any)
 
-# Load known words
-extra_words <- "arctic"
-word_freq_file <- file.path("inst", "extdata", "count_1w.txt")
-stopifnot(file.exists(word_freq_file))
-known_words <- read.table(word_freq_file, stringsAsFactors = FALSE)
-known_words <- known_words[order(known_words$V2, decreasing = TRUE), ][1:10000,]
-known_words <- rbind(known_words, data.frame(V1 = extra_words, V2 = 1000))
-row.names(known_words) <- NULL
+# To run this process:
+# (1) Enter user inputs
+# (2) Run file
 
-# Input
-
-# letter_matrix <- matrix(
-#   c("k", "y", "n",
-#     "a", "u", "m",
-#     "s", "t", "u"),
-#   nrow = 3,
-#   byrow = TRUE
-# )
-# word_lengths <- c(4,5)
-#
-# letter_matrix <- matrix(
-#   c("e", "t", "a", "e",
-#     "v", "i", "r", "h",
-#     "e", "i", "b", "g",
-#     "m", "h", "c", "u"),
-#   nrow = 4,
-#   byrow = TRUE
-# )
-# word_lengths <- c(8)
-
-# letter_matrix <- matrix(
-#   c("w", "r", "i", "d", "l",
-#     "i", "f", "e", "c", "o",
-#     "o", "z", "t", "r", "c",
-#     "e", "n", "i", "t", "e",
-#     "n", "c", "a", "r", "c"),
-#   nrow = 5,
-#   byrow = TRUE
-# )
+# User input 1: Input letter matrix
 letter_matrix <- matrix(
   c("e", "l", "r", "e", "f", "e",
     "f", "x", "b", "e", "u", "b",
@@ -53,14 +21,25 @@ letter_matrix <- matrix(
   byrow = TRUE
 )
 
-# Comment what does this do?
+# User input 2: Word lengths and starting letters
+word_lengths <- c(6)
+
+# User input 3: Word lengths and starting letters
+word_letters <- c("b")
+
+# Find k-mers within letter matrix
 mers_tree <- make_mers_tree(letter_matrix)
+
+# Load known words
+known_words <- load_known_words(word_freq_file)
+
+# Find possible words
 possible_words <- list()
 for (i in 1:length(word_lengths)) {
   print(paste0("Word number (length): ", i, " (", word_lengths[i], ")"))
-  # Comment what does this do?
+  # Subset known words to those with input length and starting letters
   known_words_subset <- subset_known_words(known_words, word_lengths[i], word_letters[i])
-  # Comment what does this do?
+  # Subset known
   possible_words[[i]] <- restrict_using_first_2_letters(known_words_subset, mers_tree[[word_lengths[i]]])
-  print(possible_words[[i]])
+  print(paste0("The possible words are: ", paste(possible_words[[i]], collapse = " ")))
 }

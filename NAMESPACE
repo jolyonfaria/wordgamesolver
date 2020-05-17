@@ -2,6 +2,8 @@
 
 export(get_next_chars)
 export(get_path)
+export(load_known_words)
 export(make_mers_tree)
 export(restrict_using_first_2_letters)
 export(subset_known_words)
+export(word_freq_file)

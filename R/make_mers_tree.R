@@ -1,10 +1,11 @@
 #' Make mers tree
 #'
-#' @description Greet a person and appropriately capitalize their name.
+#' @description Find k-mers within the letter matrix from k = 1 to 5.
 #'
-#' @param letter_matrix Your name (character string; e.g. "john doe").
+#' @param letter_matrix Matrix comprising letters.
 #'
-#' @return A character string, capitalized to title case.
+#' @return A list with one element comprising all k-mers of equal length. For instance, one element for 1-mers, and
+#' second for 2-mers.
 #' @export
 make_mers_tree <- function(letter_matrix) {
   # Make submatrix
@@ -18,7 +19,6 @@ make_mers_tree <- function(letter_matrix) {
   m3ers <- list()
   m4ers <- list()
   m5ers <- list()
-  m6ers <- list()
   for (a in 1:nrow(sub_matrix)) {
     for (b in 1:ncol(sub_matrix)) {
       # Add 2nd character
@@ -45,13 +45,6 @@ make_mers_tree <- function(letter_matrix) {
             fifth_char <- get_next_chars(fourth_char[g], fourth_char_pos[g, ], current_path, letter_matrix = sub_matrix)
             m5ers[[length(m5ers) + 1]] <- get_path(path_char = m4ers[[length(m4ers)]][g], next_char = fifth_char)
             fifth_char_pos <- t(sapply(fifth_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
-            # for (h in 1:nrow(fifth_char_pos)) {
-            #   # Add 6th character
-            #   current_path <- c(first_char, second_char[d], third_char[f], fourth_char[g], fifth_char[h])
-            #   sixth_char <- get_next_chars(fifth_char[h], fifth_char_pos[h, ], current_path, letter_matrix = sub_matrix)
-            #   m6ers[[length(m6ers) + 1]] <- get_path(path_char = m5ers[[length(m5ers)]][h], next_char = sixth_char)
-            #   sixth_char_pos <- t(sapply(sixth_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
-            # }
           }
         }
       }

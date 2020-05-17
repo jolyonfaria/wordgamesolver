@@ -7,11 +7,12 @@
 make_mers_tree(letter_matrix)
 }
 \arguments{
-\item{letter_matrix}{Your name (character string; e.g. "john doe").}
+\item{letter_matrix}{Matrix comprising letters.}
 }
 \value{
-A character string, capitalized to title case.
+A list with one element comprising all k-mers of equal length. For instance, one element for 1-mers, and
+second for 2-mers.
 }
 \description{
-Greet a person and appropriately capitalize their name.
+Find k-mers within the letter matrix from k = 1 to 5.
 }

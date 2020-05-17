@@ -11,5 +11,6 @@ Encoding: UTF-8
 LazyData: true
 Suggests:
   testthat,
+  utils,
   stringr
 RoxygenNote: 7.1.0
