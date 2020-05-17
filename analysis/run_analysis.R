@@ -1,4 +1,4 @@
-# Solve Wordtrek
+# Get hints for word search game puzzle
 
 # A program to provide hints for a word search game. The user must provide three inputs:
 # (1) Letter matrix
@@ -39,7 +39,7 @@ for (i in 1:length(word_lengths)) {
   print(paste0("Word number (length): ", i, " (", word_lengths[i], ")"))
   # Subset known words to those with input length and starting letters
   known_words_subset <- subset_known_words(known_words, word_lengths[i], word_letters[i])
-  # Subset known
+  # Subset to known words that can be created in the letter matrix
   possible_words[[i]] <- restrict_using_first_2_letters(known_words_subset, mers_tree[[word_lengths[i]]])
   print(paste0("The possible words are: ", paste(possible_words[[i]], collapse = " ")))
 }
