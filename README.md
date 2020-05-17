@@ -14,7 +14,7 @@ To provide hints for a puzzle:
 
 1. Open RStudio
 
-2. Open `run_analysis.rmd`
+2. Open `analysis/run_analysis.rmd`
 
 i. Enter puzzle inputs
 
