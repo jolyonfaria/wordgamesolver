@@ -4,10 +4,12 @@
 \alias{load_known_words}
 \title{Load known words}
 \usage{
-load_known_words(known_words_file)
+load_known_words(known_words_file, n_words)
 }
 \arguments{
 \item{known_words_file}{Known words file path}
+
+\item{n_words}{Number of words to use}
 }
 \description{
 Load known words from file.
