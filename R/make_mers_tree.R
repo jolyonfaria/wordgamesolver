@@ -7,7 +7,7 @@
 #' @return A list with one element comprising all k-mers of equal length. For instance, one element for 1-mers, and
 #' second for 2-mers.
 #' @export
-make_mers_tree <- function(letter_matrix) {
+make_mers_tree <- function(letter_matrix) { #nolint
   # Make submatrix
   sub_matrix <- letter_matrix
   sub_matrix_dim <- dim(letter_matrix)
@@ -19,32 +19,31 @@ make_mers_tree <- function(letter_matrix) {
   m3ers <- list()
   m4ers <- list()
   m5ers <- list()
-  for (a in 1:nrow(sub_matrix)) {
-    for (b in 1:ncol(sub_matrix)) {
+  for (a in seq(1, nrow(sub_matrix))) {
+    for (b in seq(1, ncol(sub_matrix))) {
       # Add 2nd character
       first_char <- sub_matrix[a, b]
       first_char_pos <- which(sub_matrix == first_char, arr.ind = TRUE)
       second_char <- get_next_chars(first_char, first_char_pos, first_char, letter_matrix = sub_matrix)
       m2ers[[length(m2ers) + 1]] <- get_path(path_char = first_char, next_char = second_char)
       second_char_pos <- t(sapply(second_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
-      for (d in 1:nrow(second_char_pos)) {
+      for (d in seq(1, nrow(second_char_pos))) {
         # Add 3rd character
         current_path <- c(first_char, second_char[d])
         third_char <- get_next_chars(second_char[d], second_char_pos[d, ], current_path, letter_matrix = sub_matrix)
         m3ers[[length(m3ers) + 1]] <- get_path(path_char = m2ers[[length(m2ers)]][d], next_char = third_char)
         third_char_pos <- t(sapply(third_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
-        for (f in 1:nrow(third_char_pos)) {
+        for (f in seq(1, nrow(third_char_pos))) {
           # Add 4th character
           current_path <- c(first_char, second_char[d], third_char[f])
           fourth_char <- get_next_chars(third_char[f], third_char_pos[f, ], current_path, letter_matrix = sub_matrix)
           m4ers[[length(m4ers) + 1]] <- get_path(path_char = m3ers[[length(m3ers)]][f], next_char = fourth_char)
           fourth_char_pos <- t(sapply(fourth_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
-          for (g in 1:nrow(fourth_char_pos)) {
+          for (g in seq(1, nrow(fourth_char_pos))) {
             # Add 5th character
             current_path <- c(first_char, second_char[d], third_char[f], fourth_char[g])
             fifth_char <- get_next_chars(fourth_char[g], fourth_char_pos[g, ], current_path, letter_matrix = sub_matrix)
             m5ers[[length(m5ers) + 1]] <- get_path(path_char = m4ers[[length(m4ers)]][g], next_char = fifth_char)
-            fifth_char_pos <- t(sapply(fifth_char, function(x) which(sub_matrix == x, arr.ind = TRUE)))
           }
         }
       }
@@ -96,7 +95,7 @@ get_next_chars <- function(focus_char, focus_char_pos, prev_chars, letter_matrix
   y2 <- ifelse(focus_char_pos[2] + 1 > ncol(letter_matrix), ncol(letter_matrix), focus_char_pos[2] + 1)
   focus_mat <- letter_matrix[x1:x2, y1:y2]
   cells_to_na <- c(focus_char, prev_chars)
-  for (i in 1:length(cells_to_na)) {
+  for (i in seq(1, length(cells_to_na))) {
     focus_mat[focus_mat == cells_to_na[i]] <- NA
   }
   next_char <- as.character(focus_mat)

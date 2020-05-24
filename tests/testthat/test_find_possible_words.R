@@ -5,7 +5,7 @@ test_that("test that given 6x6 matrix and user inputs, when search for known wor
   expected_word <- "baffle"
 
   # Make known words file
-  test_word_freq_file <-file.path(tempdir(), "known_words.csv")
+  test_word_freq_file <- file.path(tempdir(), "known_words.csv")
   write.table(
     data.frame(expected_word, 10),
     file = test_word_freq_file,
