@@ -6,7 +6,7 @@
 #' @param n_words Number of words to use
 #'
 #' @export
-load_known_words <- function(known_words_file, n_words) {
+load_known_words <- function(known_words_file, n_words = 1000) {
   extra_words <- "arctic"
   stopifnot(file.exists(known_words_file))
   known_words <- utils::read.table(known_words_file, stringsAsFactors = FALSE)
