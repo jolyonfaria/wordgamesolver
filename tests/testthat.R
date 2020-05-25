@@ -1,4 +1,4 @@
 library(testthat)
 library(wordsearchgame)
 
-test_check("wordsearchgame")
+test_check("wordgamesolver")
