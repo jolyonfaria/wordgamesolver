@@ -6,4 +6,4 @@ r_github_packages:
 after_success:
   - R CMD INSTALL $PKG_TARBALL
   - LINTR_COMMENT_BOT=false
-  - Rscript -e 'lintr::lint_package(linters = lintr::with_defaults(line_length_linter = lintr::line_length_linter(120)))'
+  - Rscript -e 'lintr::lint_package(linters = lintr::with_defaults(line_length_linter = lintr::line_length_linter(80)))'
