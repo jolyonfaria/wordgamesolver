@@ -19,3 +19,7 @@ To provide hints for a puzzle:
 i. Enter puzzle inputs
 
 ii. Run file
+
+## Lint
+
+For continuous integration, link checks do not fail build. However, lint errors are communicated via email by the lint bot.

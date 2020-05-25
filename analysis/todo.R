@@ -6,5 +6,4 @@
 # 4. Fix 2-mers
 # 5. Rewrite functions
 # 6. Revise the function documentation
-# 7. Setup lint
-# 8. Make 2 separate functions for loading known words, and adding new known words
+# 7. Make 2 separate functions for loading known words, and adding new known words
