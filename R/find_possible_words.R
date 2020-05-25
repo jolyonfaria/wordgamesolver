@@ -11,7 +11,7 @@
 #' @export
 find_possible_words <- function(mers_tree, known_words, word_lengths, word_letters) {
   possible_words <- list()
-  for (i in 1:length(word_lengths)) {
+  for (i in seq(1, length(word_lengths))) {
     print(paste0("Word number (length): ", i, " (", word_lengths[i], ")"))
     # Subset known words to those with input length and starting letters
     known_words_subset <- subset_known_words(known_words, word_lengths[i], word_letters[i])
