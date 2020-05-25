@@ -12,7 +12,8 @@ LazyData: true
 Suggests:
   here,
   lintr,
+  stringr,
   testthat,
-  utils,
-  stringr
+  tictoc,
+  utils
 RoxygenNote: 7.1.0
