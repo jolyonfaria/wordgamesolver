@@ -7,4 +7,4 @@ r_github_packages:
 after_script:
   - R CMD INSTALL $PKG_TARBALL
   - LINTR_COMMENT_BOT=false
-  - Rscript -e 'stop()'
+  - Rscript -e 'Rscript -e "quit(save = "no")'
