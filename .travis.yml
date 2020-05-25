@@ -6,4 +6,5 @@ r_github_packages:
 
 script:
   - LINTR_COMMENT_BOT=false
+  - Rscript -e 'stop()'
   - Rscript -e 'lintr::lint_package(linters = lintr::with_defaults(line_length_linter = lintr::line_length_linter(120)))'
