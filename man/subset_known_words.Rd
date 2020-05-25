@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_mers_tree.R
 \name{subset_known_words}
 \alias{subset_known_words}
-\title{subset_known_words}
+\title{Subset known words}
 \usage{
 subset_known_words(x, word_length, first_letters = NA)
 }
@@ -17,5 +17,5 @@ subset_known_words(x, word_length, first_letters = NA)
 A character string, capitalized to title case.
 }
 \description{
-Greet a person and appropriately capitalize their name.
+Subset known words table by word length and first letter(s).
 }

@@ -2,20 +2,20 @@
 % Please edit documentation in R/make_mers_tree.R
 \name{restrict_using_first_2_letters}
 \alias{restrict_using_first_2_letters}
-\title{restrict_using_first_2_letters}
+\title{Filter words by k-mers}
 \usage{
 restrict_using_first_2_letters(x, possible_strings, n_letter_match = 5)
 }
 \arguments{
-\item{x}{Your name (character string; e.g. "john doe").}
+\item{x}{Input words}
 
-\item{possible_strings}{Your name (character string; e.g. "john doe").}
+\item{possible_strings}{Character strings (i.e. k-mers)}
 
-\item{n_letter_match}{Your name (character string; e.g. "john doe").}
+\item{n_letter_match}{K-mer string length}
 }
 \value{
-A character string, capitalized to title case.
+A vector of words
 }
 \description{
-Greet a person and appropriately capitalize their name.
+Filter input words to only words that include the possible character strings (i.e. the k-mers)
 }

@@ -117,9 +117,9 @@ get_path <- function(path_char, next_char) {
   return(mers)
 }
 
-#' subset_known_words
+#' Subset known words
 #'
-#' @description Greet a person and appropriately capitalize their name.
+#' @description Subset known words table by word length and first letter(s).
 #'
 #' @param x Your name (character string; e.g. "john doe").
 #' @param word_length Your name (character string; e.g. "john doe").
@@ -135,15 +135,15 @@ subset_known_words <- function(x, word_length, first_letters=NA) {
   return(known_words_subset)
 }
 
-#' restrict_using_first_2_letters
+#' Filter words by k-mers
 #'
-#' @description Greet a person and appropriately capitalize their name.
+#' @description Filter input words to only words that include the possible character strings (i.e. the k-mers)
 #'
-#' @param x Your name (character string; e.g. "john doe").
-#' @param possible_strings Your name (character string; e.g. "john doe").
-#' @param n_letter_match Your name (character string; e.g. "john doe").
+#' @param x Input words
+#' @param possible_strings Character strings (i.e. k-mers)
+#' @param n_letter_match K-mer string length
 #'
-#' @return A character string, capitalized to title case.
+#' @return A vector of words
 #' @export
 restrict_using_first_2_letters <- function(x, possible_strings, n_letter_match = 5) {
 
