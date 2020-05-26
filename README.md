@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.com/jolyonfaria/wordsearchgame.svg?token=LHfWxcGYuGqTtAx1F1pw&branch=master)](https://travis-ci.com/jolyonfaria/wordsearchgame)
+[![Build Status](https://travis-ci.com/jolyonfaria/wordgamesolver.svg?branch=master)](https://travis-ci.com/jolyonfaria/wordgamesolver)
 <br />
 
-# wordsearchgame
-Tools to provide hints for a word search game.
+# wordgamesolver
+
+Tools to provide hints for a popular word search game.
 
 ## Word list
 
