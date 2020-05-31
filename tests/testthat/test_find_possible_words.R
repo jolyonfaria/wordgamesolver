@@ -1,6 +1,6 @@
 context("Test find possible words")
 
-test_that("test that given 6x6 matrix and user inputs, when search for known word, then known word is found", {
+test_that("given 6x6 matrix and user inputs, when search for specific word, then word is found", {
   # Expected word
   expected_word <- "baffle"
 
