@@ -43,3 +43,12 @@ test_that("given 6x6 matrix and user inputs, when search for specific word, then
   # Tear down
   unlink(test_word_freq_file, recursive = TRUE)
 })
+
+test_that("given matrix with no possible words, when search for specific word, then return no words", {
+  # TODO
+})
+
+test_that("given matrix with no word letters, when search for specific word, then search for words beginning with any
+           set of characters", {
+  # TODO
+})
