@@ -10,3 +10,4 @@
 # 8. Use packrat
 # 9. Test get_path
 # 10. Complete failing tests for find_possible_words
+# 11. Make list of extra words (maybe in configuration.R)
