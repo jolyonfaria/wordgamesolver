@@ -15,3 +15,17 @@ load_known_words <- function(known_words_file, n_words = 1000) {
   row.names(known_words) <- NULL
   return(known_words)
 }
+
+#' Get random word
+#'
+#' @description Randomly draw word from known words.
+#'
+#' @param known_words Table of known words
+#' @param word_length Number of characters of word to be randomly drawn
+#'
+#' @export
+get_random_word <- function(known_words, word_length) {
+  known_words_subset <- known_words[nchar(known_words$V1) %in% word_length, ]
+  random_word <- known_words_subset$V1[sample(1:nrow(known_words_subset), 1)]
+  return(random_word)
+}
