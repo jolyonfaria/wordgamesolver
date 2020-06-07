@@ -26,6 +26,6 @@ load_known_words <- function(known_words_file, n_words = 1000) {
 #' @export
 get_random_word <- function(known_words, word_length) {
   known_words_subset <- known_words[nchar(known_words$V1) %in% word_length, ]
-  random_word <- known_words_subset$V1[sample(1:nrow(known_words_subset), 1)]
+  random_word <- known_words_subset$V1[sample(seq(1, nrow(known_words_subset)), 1)]
   return(random_word)
 }

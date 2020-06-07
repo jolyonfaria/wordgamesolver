@@ -16,4 +16,5 @@ run_solve_random_letter_matrix <- function(known_words, word_length) {
   letter_matrix <- make_letter_matrix(words, word_length)
   mers_tree <- make_mers_tree(letter_matrix)
   possible_words <- find_possible_words(mers_tree, known_words, word_lengths, word_letters)
+  return(possible_words)
 }
