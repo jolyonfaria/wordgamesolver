@@ -3,7 +3,7 @@ Benchmark for Word game solver
 
 # Runtime for one matrix
 
-Time take to run for a 6 x 6 matrix: 4.771 s.
+Time take to run for a 6 x 6 matrix: 4.713 s.
 
 # Runtime for different matrix sizes
 
@@ -20,8 +20,8 @@ ggplot2::ggplot(time_to_solve, aes(matrix_size, time)) +
 
 # Appendix
 
-Git hash: 2d30f26a5f587d44732462640fa915dbe33a916d
+Git hash: f19b5a96496476f3befaa1fed523ce2d0a156bab
 
-Git commit date: Sun Jun 7 14:48:25 2020 +0100
+Git commit date: Sun Jun 7 15:02:26 2020 +0100
 
 Repository: wordgamesolver

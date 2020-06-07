@@ -65,8 +65,9 @@ time_to_solve <- expand.grid(
 )
 time_to_solve$time <- NA
 for (i in seq(1, nrow(time_to_solve))) {
+  letter_matrix <- run_make_letter_matrix(known_words, time_to_solve$matrix_size[i])
   tictoc::tic(paste0("Solving random matrix with size ", time_to_solve$matrix_size[i]))
-  run_solve_random_letter_matrix(known_words, time_to_solve$matrix_size[i])
+  run_solve_random_letter_matrix(letter_matrix, known_words, time_to_solve$matrix_size[i])
   time_taken <- tictoc::toc()
   time_to_solve$time[i] <- time_taken$toc - time_taken$tic
 }
