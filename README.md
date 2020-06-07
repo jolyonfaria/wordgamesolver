@@ -21,6 +21,10 @@ i. Enter puzzle inputs
 
 ii. Run file
 
+## Run
+
+Time taken to run tool for different sized matrices is at `analysis/run_analysis_time_benchmark.md`.
+
 ## Lint
 
 For continuous integration, link checks do not fail build. However, lint errors are communicated via email by the lint bot.
