@@ -21,7 +21,7 @@ i. Enter puzzle inputs
 
 ii. Run file
 
-## Run
+## Benchmark
 
 Time taken to run tool for different sized matrices is at `analysis/run_analysis_time_benchmark.md`.
 
