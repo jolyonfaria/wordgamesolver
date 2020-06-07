@@ -11,3 +11,4 @@
 # 9. Test get_path
 # 10. Complete failing tests for find_possible_words
 # 11. Make report for benchmark which can be rendered in github
+# 12. Make shiny app
