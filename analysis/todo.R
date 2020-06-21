@@ -14,3 +14,4 @@
 # 12. Make shiny app
 # 13. Add link to benchmark in README
 # 14. Benchmark time is for creating matrix and solving it, and not just solving it. Needs fixing.
+# 15. Simplify make mers tree - too much repetition

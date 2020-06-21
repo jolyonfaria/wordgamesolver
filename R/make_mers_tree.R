@@ -8,10 +8,10 @@
 #' second for 2-mers.
 #' @export
 make_mers_tree <- function(letter_matrix) { #nolint
+
   # Make submatrix
-  sub_matrix <- letter_matrix
   sub_matrix_dim <- dim(letter_matrix)
-  sub_matrix <- paste0(sub_matrix, 1:(sub_matrix_dim[1] * sub_matrix_dim[2]))
+  sub_matrix <- paste0(letter_matrix, 1:(sub_matrix_dim[1] * sub_matrix_dim[2]))
   dim(sub_matrix) <- sub_matrix_dim
   m1ers <- as.character(letter_matrix)
   m1ers <- m1ers[!is.na(m1ers)]
