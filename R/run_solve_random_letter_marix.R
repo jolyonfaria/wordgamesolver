@@ -15,17 +15,16 @@ run_solve_random_letter_matrix <- function(letter_matrix, known_words, word_leng
   return(possible_words)
 }
 
-#' run_random_letter_matrix
+#' Make letter matrix from known words
 #'
-#' @description Find possible words in letter matrix.
+#' @description Make letter matrix from known words.
 #'
 #' @param word_length Number of characters in words
 #' @param known_words Table of known words
-#' @return A character vector of known words that are in the letter matrix
+#' @return Letter matrix
 #' @export
 run_make_letter_matrix <- function(known_words, word_length) {
   word_lengths <- rep(word_length, word_length)
-  word_letters <- NA
   words <- c()
   for (i in seq(1, word_length)) {
     words <- c(words, get_random_word(known_words, word_lengths))
